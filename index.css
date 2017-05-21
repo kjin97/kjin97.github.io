@@ -5,3 +5,8 @@
 name {
   font-size = 48em;
 }
+
+.test {
+  margin: auto;
+  width: 50%;
+}
