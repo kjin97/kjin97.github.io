@@ -55,10 +55,10 @@ let task;
 function start() {
     // 2. Initialize the JavaScript client library.
     gapi.client.init({
-        'apiKey': 'AIzaSyBRjtNUliNuV4TMTH06sffXxInW0HLiIro',
+        apiKey: 'AIzaSyBRjtNUliNuV4TMTH06sffXxInW0HLiIro',
         // clientId and scope are optional if auth is not required.
-        'clientId': '158842763808-52v3sccas90s1par8vqdcgmr9d37frql.apps.googleusercontent.com',
-        'scope': 'https://www.googleapis.com/auth/calendar.readonly',
+        clientId: '158842763808-52v3sccas90s1par8vqdcgmr9d37frql.apps.googleusercontent.com',
+        scope: 'https://www.googleapis.com/auth/calendar.readonly',
     }).then(function() {
         if (!gapi.auth2.getAuthInstance().isSignedIn.get()) {
             gapi.auth2.getAuthInstance().signIn().then(function() {
