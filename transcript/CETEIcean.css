@@ -507,7 +507,13 @@ tei-gap[reason='damaged']:before {
   content:'[';
 }
 tei-gap[reason='damaged']:after {
-  content: attr(data-content) '...(damaged)]';
+  content: attr(data-content) '...(water damage)]';
+}
+tei-gap[reason='water_damage']:before {
+  content:'[';
+}
+tei-gap[reason='water_damage']:after {
+  content: attr(data-content) '...(water damage)]';
 }
 tei-gap[reason='lost']:before {
   content:'[';
@@ -781,6 +787,9 @@ tei-lb {
 tei-lb:before {
   content: '\a';
   white-space: pre;
+}
+tei-lb[break = no]:before {
+  white-space: nowrap;
 }
 tei-lbl {
   /* Empty Rule Set */
