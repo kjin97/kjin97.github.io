@@ -1,0 +1,57 @@
+<html dir = "rtl" lang = "ar">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="CETEIcean.css" media="screen" charset="utf-8">
+  </head>
+  <body>
+    <div id="TEI">
+      Sadly, this page will not work in Internet Explorer, due to its outdated Javascript support. We suggest you use Chrome or Firefox.
+    </div>
+    <script src="../dist/CETEI.js"></script>
+    <script>
+      var c = new CETEI();
+      /***********************************
+       * Behaviors, i.e. ways you want specific elements to be handled that
+       * you can't do with CSS, can be injected by calling the addBehaviors
+       * method, passing it an object containing a set of handler functions.
+       * Handler functions must take a single parameter which
+       * is an HTML element. The function names must match the name of the
+       * element they will be applied to.
+       ***********************************/
+      c.addBehaviors({"handlers":{
+        // Overrides the default ptr behavior, displaying a short link
+        // Adds a new handler for <term>, wrapping it in an HTML <b>
+        "unclear": function(elt) {
+            var b = document.createElement("u");
+            b.innerHTML = elt.innerHTML;
+            return b;
+        },
+        "del": function(elt) {
+          var s = document.createElement("s");
+          s.innerHTML = elt.innerHTML;
+          return s;
+        },
+        "lb": function(elt) {
+          var e = document.createElement("i");
+          e.innerHTML = elt.attributes.n.value;
+          return e;
+        },
+        // "handShift": function(elt) {
+        //   return elt;
+        // },
+        // Inserts the first array element before tei:add, and the second, after.
+        "add": ["`","´"]
+      }});
+      c.getHTML5('transcript1.xml', function(data) {
+        document.getElementById("TEI").innerHTML = "";
+        document.getElementById("TEI").appendChild(data);
+      });
+
+      // Alternatively, use then()
+      // (new CETEI).getHTML5('testTEI.xml').then(function(data){
+      //   document.getElementById("TEI").appendChild(data);
+      // });
+
+    </script>
+  </body>
+</html>
