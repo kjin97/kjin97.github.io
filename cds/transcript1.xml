@@ -1,0 +1,642 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Title</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Publication Information</p>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Information about the source</p>
+         </sourceDesc>
+      </fileDesc>
+  </teiHeader>
+  <text>
+     <body> 
+        <ab type="page" n="1r">
+            <lb n="1"/><gap extent="15" unit="chars"/> </ab>
+        <ab type="page" n="1v">
+           <figure> <figDesc>a full page circle drawn freehand with a geometric triangular pattern outlined in black ink and colored with red and yellow ink</figDesc></figure> 
+        </ab>
+        <ab type="page" n="2r">
+           <lb n="1"/>
+           بسم اللّه الرحمن الرحيم صلى الله على س 
+          <lb n="2"/>
+           سيدنا
+           <persName type="#prophet" >محمد</persName>
+           وآله و 
+           <choice>
+              <orig>اصحبه</orig>
+              <reg>أصحابه</reg>
+           </choice>
+            وأزواجه 
+           <lb n="3"/>
+           و
+           <choice>
+              <orig>ذريته</orig>
+              <reg>ذرّيّاته</reg>
+           </choice>
+           وسلم 
+           <w type="bāb-beginning">باب</w>
+           <persName type="#prophet">موسى</persName>
+           عليه السلا 
+           <lb break="no" n="4"/>
+           م ومن كتبه و 
+           <unclear>عقه</unclear>
+           <choice><orig>يبحك</orig><reg>يحبك</reg></choice>
+            حباً شديداً 
+           <lb n="5"/>
+           و
+           <unclear reason="ink_smudging">عققه</unclear>
+           ف
+           <gap reason="damage"/>
+           <choice><orig>يحديد</orig><reg>تجديد</reg></choice>
+           المال
+           <choice>
+              <orig>اكثير</orig>
+              <reg>الكثير</reg>
+           </choice>
+           واله 
+           <lb n="6"/>
+           <unclear reason="illegible"/>
+           <unclear>وااقبد</unclear>
+           والابل
+           <unclear>الفتر</unclear>
+           والعلم
+           <lb n="7"/>
+            و
+           <persName type="#names_of_God">العز</persName>
+           و
+           <unclear>الدجاجة</unclear>
+           والفضة والذهب و
+           <lb n="8"/>
+           <unclear reason="illegible"/>
+           <choice><orig>الجهار</orig><reg>الجواهر</reg></choice>
+           ومن كتبه وعلقه في
+           <unclear reason="illegible"/>
+           والا
+           <lb break="no" n="9"/>
+           خزة عمر
+           <persName type="#names_of_God">الله</persName>
+             ذنوبه و
+           <unclear>الحيا مصلة</unclear>
+           <lb n="10"/>
+           <unclear reason="water_damage">الحديد</unclear>
+           والسم والسهم والسيف
+           <lb n="11"/>
+           والروح والحمل والسكين الا
+           <unclear reason="illegible"/>
+           <lb n="12"/>
+           له في جسده هو
+           <unclear>بو</unclear>
+           كان مثل
+           <unclear reason="illegible"/>
+        </ab>
+        <ab type="page" n="2v">
+           <lb n="1"/>
+           المطر وعدد النجوم
+           <unclear reason="illegible"/> 
+           اله
+           <lb n="2"/>
+           لا اله الا هو فقال 
+           <choice>
+              <orig>الموسى</orig>
+              <reg><persName type="#prophet">موسى</persName></reg>
+           </choice>
+           عليه السلا
+           <lb break="no" n="3"/>
+           م رحمة الله قال
+           <persName>ابن عمر</persName>
+           ان قل و
+           <unclear>الحدور</unclear>
+           <w type="faṣl-unknown">فصل</w>
+           <lb n="4"/>
+           الدعا
+           <persName type="#prophet">عيسى</persName>
+           عليه السلام رضي الله عنه وما
+           <lb n="5"/>
+           رعا 
+           <persName type="#prophet">رسول الّله</persName>
+           <del rend="overstrike">ومن كتب</del>
+           صلى الله عليه وسلم
+           <lb n="6"/>
+           <unclear>ءله مال</unclear> 
+           ومن كتب هذه الدعا وعلقه على با
+           <lb break="no" n="7"/>
+           ب 
+           <choice>
+              <orig>دره</orig>
+              <reg>داره</reg>
+           </choice>
+           لم قبل فيه 
+           <choice><orig>سلطن</orig><reg>سلطان</reg></choice>
+           ما ذل
+           <unclear reason="illegible"/>
+           <lb n="8"/>
+           <persName>جابر</persName>
+           و يدفع عنه افات
+           <choice>
+              <orig>اليل والنها</orig>
+              <reg> الليل والنهار</reg>
+           </choice>
+           ويرفع
+           <lb n="9"/>
+           عمره هذه 
+           <choice>
+              <orig>الاسمى</orig>
+              <reg>الاسماء</reg>
+           </choice>
+           في حفظة بطول قساس
+           <lb n="10"/>
+           <unclear>افهيط</unclear>
+           كذل
+           <unclear reason="illegible"/>
+           <lb n="11"/>
+           <unclear reason="illegible"/>
+           الصلح
+           <gap reason="water_damage"/>
+           <lb n="12"/>
+           <unclear reason="illegible"/>
+           <unclear>مطر على</unclear>
+           <gap reason="water damage"/>
+           <catchwords>فيو</catchwords>
+        </ab>
+        <ab type="page" n="3r"> 
+           <unclear reason="illegible" quantity="6" unit="lines"/>
+           <lb n="7"/>
+           مطبع يا ابن قال 
+           <persName>الشيج</persName>
+           <unclear reason="illegible"/>
+           <lb n="8"/>
+           الامام
+           <persName>موسى</persName>
+           عليه السلام تر
+           <lb break="no" n="9"/>
+            جعه
+           <persName>ام<persName type="#prophet">موسى</persName></persName>
+           عليه السلام 
+           <choice><orig>فل ل</orig>
+              <reg>قال</reg>
+           </choice>
+           <lb n="10"/>
+           قال
+           <unclear reason="illegible"/>
+           و اما الانف بطول
+           <unclear reason="illegible"/>
+           <lb n="11"/>
+           <gap reason="water_damage"/>
+           يعلمه وهي
+           <choice><orig>ثلاته</orig><reg><num type="cardinal" value="3">ثلاثة</num></reg></choice>
+           و
+           <unclear>احرف</unclear>
+           ولا ا
+           <lb n="12"/>
+           نف اسمه تعلى كان في الا
+           <persName type="#names_of_God">الله</persName>
+        </ab>
+        <ab type="page" n="3v">
+           <figure><figDesc>Numeric magic square oriented vertically. The outer border is drawn with five black lines, except for the bottom edge, which has four black lines and one red/brown line. The inner borders are drawn in red/brown ink, and there are two digits in each small square. <height quantity="7" unit="lines"></height></figDesc></figure>
+           <lb n="1"/>
+           اسم الاعم والعظم وهويحلب
+           <gap reason="damage"/>
+           <lb n="2"/>
+           <unclear reason="illegible"/>
+           ومن كتب في
+           <unclear reason="illegible"/>
+           بمسك و
+           <lb n="3"/>
+           اغفران و العمرمتعلن بالمشرء في
+           <unclear reason="illegible"/>
+           <lb n="4"/>
+           واصاحبه النسارماته بعظم في اعين
+           <lb n="5"/>
+           الناس و لا يعم عليه
+           <lb n="6"/>
+           المرتد وهي هذه ال
+           <lb break="no" n="7"/>
+           <choice><orig>لوفيو</orig><reg>توفيق</reg></choice>
+           الحانه
+           <unclear reason="illegible"/>
+           <lb n="8"/>
+           وهي هذه ا
+           <lb break="no" n="9"/>
+           ل
+           <choice><orig>حالم</orig><reg><term>خاتم</term></reg></choice>
+           <w type="faṣl-unknown">فصل</w>
+            ومن
+           <lb n="10"/>
+           كتب هذه الاس
+           <lb break="no" n="11"/>
+           سما وغسل
+           <gap reason="water_damage"/>
+           <lb n="12"/>
+           وصاحبه اسار له ماله لعظيم في اعين النا
+           <lb break="no" n="13"/>
+           س و لا هى اعله
+           <choice><orig>الوفيو</orig><reg>التوفيق</reg></choice>
+           <choice><orig>الحاتم</orig><reg><term>الخاتم</term></reg></choice>
+           <unclear reason="water_damage"/>
+           <lb n="14"/>
+           <catchwords>
+              <w type="faṣl-begin">فصل</w>
+               ومن
+           </catchwords>
+        </ab>
+        <ab type="page" n="4r">
+           <figure><figDesc>numeric magic square oriented horizontally. Although the square is oriented differently than the magic square on the previous page, the figure and digits seems to be an attempted copy of the magic square preceding it. <height quantity="5" unit="lines"></height></figDesc></figure>
+           <lb n="1"/>
+           <handShift medium="#red_ink"/>
+           <w type="faṣl-begin">فصل</w>
+           ومن كتب هذه 
+           <unclear>السفين</unclear>
+           <lb n="2"/>
+           <unclear reason="illegible"/>
+           و
+           <choice><orig>حعله</orig><reg>جعله</reg></choice>
+           <handShift medium="#black_ink"/>
+           وحملها هه كل امر ا
+           <lb n="3"/>
+           <unclear>لنسا احرمن</unclear>
+           حامه الاجل المود و
+           <lb n="4"/>
+           وكذالك من اسمعا
+           <lb n="5"/>
+           وغسل له 
+           <choice><orig><unclear>حهيع</unclear></orig><reg>جميع</reg></choice>
+           س
+           <lb n="6"/>
+           سيدء
+           <unclear reason="illegible"/>
+           <lb n="7"/>
+           و
+           <choice><orig>اليثبت</orig><reg>تثبيت</reg></choice>
+           <persName type="#names_of_God">الله</persName>
+           ما في 
+           <lb n="8"/>
+           يده يسر
+           <unclear reason="illegible"/>
+           <lb n="9"/>
+           وكذالك من كتبه هذه الاسم عن سكين
+           <lb n="10"/>
+           و
+           <unclear reason="illegible"/>
+           لا تطعم المراة الد
+           <lb n="11"/>
+           <unclear reason="water_damage"/>
+           شديد الاتاكل و لا يشرب ا
+           <lb n="12"/>
+           <unclear reason="water_damage">سمه</unclear>
+           المجو المحور
+           <unclear>بالدر</unclear>
+           <persName type="names_of_God">الله</persName>
+           تعلى
+           <lb n="13"/>
+           و هي
+           <unclear reason="water_damage"/>
+           <handShift medium="red ink"/>
+           و اما اسمها ميكة و من
+        </ab>
+        <ab type="page" n="4v">
+           <figure><figDesc>Four circles drawn at the bottom of the page after the text. Three are drawn with black and red/brown ink and closely resemble wheels. The fourth circle differs slightly in design and is colored with yellow ink.</figDesc></figure>
+           <lb n="1"/>
+           <unclear reason="illegible"/>
+           في المربو وجعله معه ما
+           <lb n="2"/>
+           له
+           <choice><reg>يفلًك</reg></choice>
+           و يسحر او الممككنات
+           <lb n="3"/>
+           <unclear>لا يمناسبا الابالها حامته لا يملناسنا</unclear>
+           <lb n="4"/>
+           <unclear reason="illegible"/>
+           وهي هذه الا
+           <lb break="no" n="5"/>
+           سم 
+           <w type="faṣl-unknown">فصل</w>
+           وهي هذه الحروف
+           <num type="cardinal" value="6">الستة</num>
+           ف
+           <lb n="6"/>
+           <w type="faṣl-unknown">فصل</w>
+           كتبها في 
+           <time>ساعة الاولى</time>
+           ما يوم ا
+           <lb break="no" n="7"/>
+           <date>لاحد</date>
+           من هي هذه الوفق لا يكاد لطلب
+           <lb n="8"/>
+           <unclear reason="illegible"/>
+           و لا يعم تعلى وهذ
+           <lb break="no" n="9"/>
+           ه 
+           <term>الخاتم</term>
+           واصا
+        </ab>
+        <ab type="page" n="5r">
+           <figure><figDesc>Numeric or symbolic magic square within star, and surrounded by a circle. The figure is drawn primarily in black and yellow ink, with some red detailing</figDesc></figure>
+        </ab>
+        <ab type="page" n="5v">
+           <lb n="1"/>
+           <w type="faṣl-beginning">فصل</w>
+           <choice>
+              <reg>حقيقة</reg>
+           </choice> 
+           لاسم 
+           <persName type="#prophet">موسى</persName>
+           عليه السلا
+           <lb break="no" n="2"/>
+           م
+           <unclear reason="illegible"/>
+           بن عند القرجين رضي الله ا
+           <lb n="3"/>
+           عنه من اراد ان يسال
+           <persName type="#names_of_God">الله</persName>
+           تعلى و
+           <choice>
+              <orig>يستحا</orig>
+              <reg>يستجا</reg>
+           </choice>
+           <lb break="no" n="4"/>
+           ب له 
+           <unclear>كاينة ما كاتبت</unclear>
+           <unclear reason="illegible"/>
+           <lb n="5"/>
+           حام القارر ا لم نشرح وفي 
+           <num type="ordinal" value="2">الثاني</num>
+           <unclear>الاام</unclear>
+           <lb n="6"/>
+           القارر وعد جاء نصرصحه فاذ في
+           <unclear reason="illegible"/>
+           <lb n="7"/>
+           صلاته
+           <unclear reason="illegible"/>
+           استغفر
+           <persName type="#names_of_God">الله</persName>
+           <unclear reason="illegible"/>
+           <lb n="8"/>
+           <unclear reason="illegible"/>
+           مرة ويصلى على
+           <unclear reason="illegible"/>
+           الله عل
+           <lb n="9"/>
+           عليه وسلم يسهل ماله وسع وال
+           <lb n="10"/>
+           <num type="cardinal" value="70">سبعون</num>
+           ويقول في اخر الذكر اجب ااا
+           <lb n="11"/>
+           <unclear reason="angel names?"></unclear>
+           <lb n="12"/>
+           ويا
+           <unclear reason="illegible"/>
+           يا من هو الا ه
+           <catchwords>هو الامر</catchwords>
+        </ab>
+        <ab type="page" n="6r">
+           <figure><figDesc>This figure appears to be a sketch or outline of a rectilinear grid or empty magic square. The lines are drawn freehand, and the columns and rows are unevenly spaced.</figDesc></figure>
+           <lb n="1"/>
+           هو الامرا
+           <handShift medium="#red_ink"/>
+           الا هو لا اله الا هو اعطني
+           <lb n="2"/>
+           سؤالي ما عندك
+           <handShift medium="#black_ink"/>
+           انك سميع
+           <unclear reason="damage"/>
+           <lb n="3"/>
+           وسريعا فقدرة الله الملك الديار وهي
+           <lb n="4"/>
+           اسم من 
+           <choice>
+              <orig>اسما</orig>
+              <reg>اسماء</reg>
+           </choice>
+           <handShift medium="#red_ink"/>
+           <persName>ام<persName>موسى</persName></persName>
+           غليه السلام
+           <lb n="5"/>
+           <handShift medium="#black_ink"/>
+           وكذالك من  وصعها في
+           <unclear reason="illegible"/>
+           <lb n="6"/>
+           ولاو جعلها في وسط اره لم
+           <unclear reason="illegible"/>
+           <lb n="7"/>
+           <unclear reason="illegible"/>
+           والواسو الراو البركة في هذا
+           <lb n="8"/>
+           ه الدر ما دام فيها باذن 
+           <persName type="#names_of_God">الله</persName>
+           <del rend="overstrike">  الملك الد</del>
+           <lb n="9"/>
+           تعلى وهي هذه
+           <handShift medium="#red_ink"/>
+           <w type="faṣl-unknown">فصل</w>
+           قال
+           <unclear>سعد بن</unclear>
+           مبارك
+           <lb n="10"/>
+           <unclear>بن ابني طلب</unclear>
+           <handShift medium="#black_ink"/>
+        </ab>
+        <ab type="page" n="6v">
+           <figure><figDesc>This full page magic square includes an outer perimeter drawn in yellow and black ink with red corner adornments. The border contains continuous written text, while the contents of the inner magic square seem to be primarily numbers.</figDesc></figure>
+           <catchwords>circles to indicate the circular figure on the following page</catchwords>
+        </ab>
+        <ab type="page" n="7r">
+           <figure><figDesc>A full-page circle drawn freehand in black, yellow, and red ink. The outermost ring is filled with presumably continuous text written in black ink. Two yellow circles inclose the inner section of the figure, which contains a grid and star drawn in yellow ink. This section contains short words written in red ink. In the center of the star and grid is a small yellow square. </figDesc></figure>
+        </ab>
+        <ab type="page" n="7v">
+           <figure><figDesc>This is a U-shaped figure, and could be either representational or abstract. It is drawn in black, red, and yellow ink. The outer border is adorned with red lines and marks that appear to be symbols. The text in the left of the figure is written in red and difficult to decipher. </figDesc></figure>
+           <lb n="1"/>
+           <handShift medium="#red_ink"/>
+           <w type="faṣl-beginning">فصل</w>
+           دكر الام 
+           <choice>
+              <orig>حو</orig>
+              <reg>هو</reg>
+           </choice>
+           اسم
+           <num type="cardinal" value="4">اربعة</num>
+           <del rend="overstrike">المس</del>
+           <lb n="2"/>
+           المسر و
+           <num type="cardinal" value="3"><choice><orig>تلالة</orig><reg>ثلاثة</reg></choice></num>
+           <handShift medium="#black_ink"/>
+           <unclear reason="illegible"/>
+           <lb n="3"/>
+           لا يموت في يده
+           <unclear reason="illegible"/>
+           وهده الا
+           <lb break="no" n="4"/>
+           تنه لله
+           <persName type="#names_of_God">الله</persName>
+           حروف سرسر و
+           <unclear reason="illegible"/>
+           <lb n="5"/>
+           ومع هذه
+           <term><choice><orig>لاية</orig><reg>الآية</reg></choice></term>
+           قال
+           <unclear reason="illegible"/>
+           <lb n="6"/>
+           فطور اثم ارجع البصر
+           <unclear reason="illegible"/>
+           ينقلب
+           <lb n="7"/>
+           <unclear>البك</unclear>
+           البصر
+           <unclear reason="illegible"/>
+        </ab>
+        <ab type="page" n="8r">
+           <figure><figDesc>This full page, zoomorphic figure depicts a hooved animal, possibly a horse, with a mane, tail, and geometric pattern on its torso. It is outlined in black and colored primarily with yellow ink, though it contains a very small amount of red ink as well. It is surrounded on three sides by a rectangular object with a spiky outer edge. </figDesc></figure>
+        </ab>
+        <ab type="page" n="8v">
+           <figure><figDesc>This full page, zoomorphic figure is closely related to the figure drawn on the page preceding it. It depicts a hooved animal, possibly a horse, with a mane, tail, and geometric pattern on its torso. It is outlined in black and colored primarily with yellow ink and smaller amounts of red. It is bordered on two sides by a rectilinear strip with a spiky outer edge. </figDesc></figure>
+           <catchwords>فصل</catchwords>
+        </ab>
+        <ab type="page" n="9r">
+           <lb n="1"/>
+           <handShift medium="#red_ink"/>
+           <w type="faṣl-beginning">فصل</w>
+           ما ل 
+           <persName>ابو المعالي </persName>
+           رحمة
+           <persName type="#names_of_God">الله</persName>
+           ت
+           <lb n="2"/>
+           تعلى ومن الصا له هم او اعم 
+           <choice>
+              <orig>مسوظ</orig>
+              <reg>مسوط</reg>
+           </choice>
+           <lb n="3"/>
+           <handShift medium="#black_ink"/>
+           <unclear>و يصلو رقعتين لاام</unclear>
+              <choice>
+                 <orig><unclear>القرار</unclear></orig>
+                 <reg>القرآن</reg>
+              </choice>
+           والى شور
+           <lb break="none" n="4"/>
+           ة ما شيا لله ويذكر هذه
+           <choice>
+              <orig>الدعاءه</orig>
+              <reg><term>الدعاء</term></reg>
+           </choice>
+           <lb n="5"/>
+           اصال 
+           <persName type="#names_of_God">الله</persName>
+            تعلى
+           <unclear reason="illegible"/>
+           <lb n="6"/>
+           طرفة عين و هي هذه
+           <unclear>يا عدتي</unclear>
+           ع
+           <lb n="7"/>
+           <unclear>عند سدتي و لا عيدتي عند عيد كان</unclear>
+           <lb n="8"/>
+           <unclear reason="illegible"/>
+           <unclear>و يابافطع عند نبي و باولى و</unclear>
+           <lb n="9"/>
+           لا
+           <unclear reason="illegible"/>
+           <lb n="10"/>
+           <unclear reason="illegible"/>
+           عبد و حششي المرج في هم 
+           <lb n="11"/>
+           <unclear reason="illegible"/>
+           برحمتك يا
+           <choice>
+              <orig>رحم</orig>
+              <reg>رحمن</reg>
+           </choice>
+           <choice>
+              <orig>الرحمين</orig>
+              <reg>الرحيم</reg>
+           </choice>
+           وباوبا
+           <lb n="12"/>
+           لله التوفيق
+           <handShift medium="#red_ink"/>
+           <w type="faṣl-beginning">فصل</w>
+           الاسم 
+           <persName type="#names_of_God">الله</persName>
+           <persName type="#names_of_God">الاعظم</persName>
+        </ab>
+        <ab type="page" n="9v">
+           <figure>
+              <figDesc>This rectangular figure takes up the bottom half of the page and is outlined in black and colored in yellow ink. The eight outer sections each contain a word, and those that are legible seem to be drawn from the 99 Names of God in Islam. The middle section's text is written in red with black dots, and is a reference or supplication to a name we were unable to decipher, perhaps drawn or created in the tradition of magic and divination. </figDesc>
+               <ab>
+                  <choice><orig>الوسع</orig><reg><persName type="names_of_God">الواسع</persName></reg></choice>
+                  <persName type="names_of_God">الوهاب</persName>
+                  <persName type="names_of_God">الله</persName>
+                  <choice><orig>الحواد</orig><reg><persName type="names_of_God">الجواد</persName></reg></choice>
+                  <unclear>الكتافي</unclear>
+                  <persName type="names_of_God">الغني</persName>
+                  <choice><reg><persName type="names_of_God">الفتاح</persName></reg></choice>
+                  <unclear>الراو</unclear>
+               </ab>
+           </figure>
+           <lb n="1"/>
+           ومن 
+           <choice>
+              <orig>دكركرها</orig>
+              <reg>ذكرها</reg>
+           </choice>
+           <unclear reason="illegible">لممابه</unclear>
+           <handShift medium="#black_ink"/>
+           حاجته طري
+           <unclear reason="illegible"/>
+           <lb n="2"/>
+           <handShift medium="#red_ink"/>
+           <w type="faṣl-beginning">فصل</w>
+           <term>خاتم</term>
+           المباركة صار
+           <choice>
+              <orig>بعص</orig>
+              <reg>بعض</reg>
+           </choice>
+           العا
+           <lb break="no" n="3"/>
+           <choice>
+              <orig>رعين</orig>
+              <reg>رفين</reg>
+           </choice>
+           ومن
+           <choice>
+              <orig>راد ودحود</orig>
+              <reg>اراد وجود</reg>
+           </choice>
+           <handShift medium="#black_ink"/>
+           المال
+           <choice>
+              <orig>فكليكتب</orig>
+              <reg>فليكتب</reg>
+           </choice>
+           <lb n="4"/>
+           هذه
+           <term>الخاتم</term>
+           بمسك
+           <unclear>وررعقاال وما</unclear>
+           <lb n="5"/>
+           <unclear>احوا دار منكر له و لا مبا والا مبا له</unclear>
+           <lb n="6"/>
+           اد في 
+           <date>
+           ليلة
+           <choice>
+              <orig>الحمعه</orig>
+              <reg>الجمعة</reg>
+           </choice>
+           </date>
+           وعلقه
+           <unclear reason="illegible"/>
+           <catchwords><unclear reason="water_damage"></unclear></catchwords>
+        </ab>
+     </body>
+  </text>
+</TEI>
