@@ -36,6 +36,11 @@
           e.innerHTML = elt.attributes.n.value;
           return e;
         },
+        "figure": function(elt) {
+          p = document.createElement("p");
+          p.innerHTML = "Figure 1: " + elt.innerHTML;
+          return p;
+        },
         // "handShift": function(elt) {
         //   return elt;
         // },
