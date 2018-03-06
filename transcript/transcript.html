@@ -5,7 +5,7 @@
   </head>
   <body>
     <div id="TEI">
-      Unable to render page. Please check console or contact owner.
+      Unable to render page. Please check console or contact owner
     </div>
     <script src="../dist/CETEI.js"></script>
     <script>
@@ -22,8 +22,8 @@
         // Overrides the default ptr behavior, displaying a short link
         // Adds a new handler for <term>, wrapping it in an HTML <b>
         "unclear": function(elt) {
-            var b = document.createElement("u");
-            b.innerHTML = elt.innerHTML;
+            var b = document.createElement("tei-unclear");
+            b.innerHTML = "[?" + elt.innerHTML + "]";
             return b;
         },
         "del": function(elt) {
@@ -39,6 +39,7 @@
         "figure": function(elt) {
           p = document.createElement("p");
           p.innerHTML = "Figure 1: " + elt.innerHTML;
+          p.dir = "ltr"
           return p;
         },
         // "handShift": function(elt) {

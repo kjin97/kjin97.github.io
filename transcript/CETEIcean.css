@@ -507,19 +507,19 @@ tei-gap[reason='damaged']:before {
   content:'[';
 }
 tei-gap[reason='damaged']:after {
-  content: attr(data-content) '...(water damage)]';
+  content: attr(data-content) '(damaged)]';
 }
 tei-gap[reason='water_damage']:before {
   content:'[';
 }
 tei-gap[reason='water_damage']:after {
-  content: attr(data-content) '...(water damage)]';
+  content: attr(data-content) '(water damage)]';
 }
 tei-gap[reason='lost']:before {
   content:'[';
 }
 tei-gap[reason='lost']:after {
-  content: attr(data-content) '...(lost)]';
+  content: attr(data-content) '(lost)]';
 }
 tei-gap[data-tei-reason='illegible']:after {
   content: attr(data-content);
