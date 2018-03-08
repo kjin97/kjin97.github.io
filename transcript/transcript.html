@@ -27,8 +27,8 @@
             return b;
         },
         "del": function(elt) {
-          var s = document.createElement("s");
-          s.innerHTML = elt.innerHTML;
+          var s = document.createElement("tei-del");
+          s.innerHTML = "[" + elt.innerHTML + " :stricken]";
           return s;
         },
         "lb": function(elt) {
@@ -37,7 +37,7 @@
           return e;
         },
         "figure": function(elt) {
-          p = document.createElement("p");
+          p = document.createElement("tei-gi");
           p.innerHTML = "Figure 1: " + elt.innerHTML;
           p.dir = "ltr"
           return p;
