@@ -22,12 +22,19 @@
         // Overrides the default ptr behavior, displaying a short link
         // Adds a new handler for <term>, wrapping it in an HTML <b>
         "unclear": function(elt) {
+          if (elt.innerText) {
             var b = document.createElement("u");
             b.innerHTML = elt.innerHTML;
             return b;
+          }
+          else {
+            var u = document.createElement("tei-gap");
+            u.innerHTML = '· · ? · ·';
+            return u;
+          } 
         },
         "del": function(elt) {
-          var s = document.createElement("tei-del");
+          var s = document.createElement("tei-d");
           s.innerHTML = "[" + elt.innerText + " :stricken]";
           return s;
         },
@@ -38,13 +45,12 @@
         },
         "figure": function(elt) {
           p = document.createElement("tei-code");
-          p.innerHTML = "Figure 1: " + elt.innerHTML;
+          p.innerHTML = "Figure: " + elt.innerHTML;
           p.dir = "ltr";
           return p;
         },
         "gap": function(elt) {
-          var g = document.createElement("tei-gap");
-          console.log(elt)
+          var g = document.createElement("tei-g");
           if (elt.attributes.extent) {
             g.innerHTML = '· '.repeat(elt.attributes.extent.value);
           } else {
