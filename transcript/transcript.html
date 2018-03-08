@@ -22,13 +22,13 @@
         // Overrides the default ptr behavior, displaying a short link
         // Adds a new handler for <term>, wrapping it in an HTML <b>
         "unclear": function(elt) {
-            var b = document.createElement("tei-unclear");
-            b.innerHTML = "[?" + elt.innerHTML + "]";
+            var b = document.createElement("u");
+            b.innerHTML = elt.innerHTML;
             return b;
         },
         "del": function(elt) {
           var s = document.createElement("tei-del");
-          s.innerHTML = "[" + elt.innerHTML + " :stricken]";
+          s.innerHTML = "[" + elt.innerText + " :stricken]";
           return s;
         },
         "lb": function(elt) {
@@ -37,16 +37,29 @@
           return e;
         },
         "figure": function(elt) {
-          p = document.createElement("tei-gi");
+          p = document.createElement("tei-code");
           p.innerHTML = "Figure 1: " + elt.innerHTML;
-          p.dir = "ltr"
+          p.dir = "ltr";
           return p;
         },
-        // "handShift": function(elt) {
-        //   return elt;
-        // },
-        // Inserts the first array element before tei:add, and the second, after.
-        "add": ["`","´"]
+        "gap": function(elt) {
+          var g = document.createElement("tei-gap");
+          console.log(elt)
+          if (elt.attributes.extent) {
+            g.innerHTML = '· '.repeat(elt.attributes.extent.value);
+          } else {
+            g.innerHTML = '· · ? · ·';
+          }
+          return g;
+        },
+        "handShift": function(elt) {
+          var h = document.createElement("i");
+          h.innerHTML = '(' + elt.attributes.medium.value.replace('#', '').replace('_', ' ') + ')';
+          return h;
+        }
+        // "ab": function(elt) {
+
+        // }
       }});
       c.getHTML5('transcript1.xml', function(data) {
         document.getElementById("TEI").innerHTML = "";
