@@ -1770,6 +1770,15 @@ tei-vocal {
 tei-w {
   /* Empty Rule Set */
 }
+tei-w[type="bāb-beginning"] {
+  font-size: 200%;
+}
+tei-w[type="faṣl-unknown"] {
+  font-weight: bold;
+}
+tei-w[type="faṣl-beginning"] {
+  font-size: 150%;
+}
 tei-watermark {
   /* Empty Rule Set */
 }
