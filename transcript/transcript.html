@@ -62,6 +62,18 @@
           var h = document.createElement("i");
           h.innerHTML = '(' + elt.attributes.medium.value.replace('#', '').replace('_', ' ') + ')';
           return h;
+        },
+        "faṣl-beginning": function(elt) {
+          var h = document.createElement("tei-fasl");
+          h.innerHTML = elt.innerHTML;
+          h.style.fontSize = 'larger';
+          return h;
+        },
+        "bāb-beginning": function(elt) {
+          var b = document.createElement("tei-bab");
+          b.innerHTML = elt.innerHTML;
+          b.style.fontSize = '180%';
+          return b;
         }
         // "ab": function(elt) {
 
