@@ -17,6 +17,13 @@ tei-choice tei-orig + tei-reg:after,
 tei-choice tei-reg + tei-orig:after {
   content: ")";
 }
+
+tei-orig {
+  text-transform: capitalize;
+}
+tei-choice tei-orig {
+  text-transform: none;
+}
 /* A */
 tei-ab {
   display: block;

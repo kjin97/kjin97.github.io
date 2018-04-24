@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+	<head>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href = "css/main.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="js/jquery.simplePagination.js"></script>
+	<script src="js/database.js"></script>
+ 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link type="text/css" rel="stylesheet" href="css/simplePagination.css"/>
+</head>
+<body>
+
+
+<div class = "container">
+	<div class = "row">
+		<div class = "col-md-2">
+			<input type="text" placeholder="Name">
+		</div>
+		<div class = "col-md-2">
+			<input type="text" placeholder="Type">
+		</div>
+		<div class = "col-md-2">
+			<input type="text" placeholder="Location">
+		</div>
+		<div class = "col-md-2">
+			<div class="dropdown">
+				<button class="btn btn-default dropdown-toggle" type="button" id = "menu1" data-toggle="dropdown">Select Years
+				<span class="caret"></span></button>
+				<ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+				    <li role="presentation"><a role="menuitem" href="#">1600-1650</a></li>
+				    <li role="presentation"><a role="menuitem" href="#">1650-1700</a></li>
+				    <li role="presentation"><a role="menuitem" href="#">1700-1750</a></li>
+				    <li role="presentation"><a role="menuitem" href="#">1750-1800</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class = "col-md-2">
+			<button class = "search" type = "btn">Search...
+		</div>
+	</div>
+	<div class = "row">
+		<div id="database" class = "table-responsive table-bordered"></div>
+	</div>
+	<div class = "row">
+		<div id = "page-nav"></div>
+	</div>
+</div>tml 
+
+</body>
+</html>

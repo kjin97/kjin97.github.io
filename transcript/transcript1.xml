@@ -41,6 +41,13 @@
               <orig>ذريته</orig>
               <reg>ذرّيّاته</reg>
            </choice>
+           <choice>
+            <orig>yes</orig>
+            <reg>no</reg>
+          </choice>
+           <orig>
+              capitalize
+           </orig>
            وسلم 
            <w type="bāb-beginning">باب</w>
            <persName type="#prophet">موسى</persName>
