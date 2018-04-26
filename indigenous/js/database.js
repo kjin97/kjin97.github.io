@@ -46737,8 +46737,17 @@ $(function() {
 	});
 	$("#database > tbody")[0].innerHTML = txt;
 
-	
-
+	var types = [];
+	database.forEach(function(element) {
+		types.push(element.person.typeKindOfEnslavement);
+	});
+	console.log(types)
+	types = types.filter((type, index, thisArray) => thisArray.indexOf(type) === index)
+	var allTypes = "";
+	types.forEach(function(type) {
+		allTypes += "<option>" + type + "</option>"
+	});
+	$("#types")[0].innerHTML = allTypes
     paginate();
 });
 

@@ -17,7 +17,9 @@
 					<input type="text" id = "searchName" placeholder="Name">
 				</div>
 				<div class = "col-md-2">
-					<input type="text" id = "searchType" placeholder="Type">
+					<input list="types" id = "searchType" placeholder="Type">
+					<datalist id = "types">
+					</datalist>
 				</div>
 				<div class = "col-md-2">
 					<input type="text" id = "searchLocation" placeholder="Location">
@@ -32,7 +34,7 @@
 						</select>
 				</div>
 				<div class = "col-md-2">
-					<input class = "btn" type = "submit" value = "Search..."></button>
+					<input class = "btn btn-default" type = "submit" value = "Search..."></button>
 				</div>
 			</form>
 		</div>
