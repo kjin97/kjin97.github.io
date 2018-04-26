@@ -46667,97 +46667,194 @@ var database = [
 }
 ]
 
+// Outputs a person's data into HTML table row form
 
+function displayData(entry, paginate = true) {
+	txt = "";
+	txt += "<tr";
+	if (paginate) {
+		txt += " class = \"paginate\">";
+	} else {
+		txt += ">";
+	}
+	person = entry.person;
+	doc = entry.document;
+	// ID
+	txt += "<td>" + "DISA-" + entry.meta.idPrefix + "-" + entry.meta.idSuffix + "</td>";
+	// First Name
+	if (person.names[0] && person.names[0].firstName) {
+		txt += "<td>" + person.names[0].firstName + "</td>";
+	} else {
+		txt += "<td>" + " " + "</td>";
+	}
+	// Last Name
+	if (person.names[0] && person.names[0].lastName) {
+		txt += "<td>" + person.names[0].lastName + "</td>";
+	} else {
+		txt += "<td>" + " " + "</td>";
+	}
+	// Date
+	if (doc.date.year) {
+		txt += "<td>" + doc.date.year + '.' + doc.date.month + '.' + doc.date.day + "</td>";
+	} else {
+		txt += "<td>Unknown</td>"
+	}
+	// Colony/State
+	if (doc.colonyState) {
+		txt += "<td>" + doc.colonyState + "</td>";
+	} else {
+		txt += "<td> </td>";
+	}
+	// Owner
+	txt += "<td>" + entry.owner.name.firstName + " " + entry.owner.name.lastName + "</td>";
 
-var resultCount = 25
-var page = 1
+	// Age
+	if (person.age) {
+		txt += "<td>" + person.age + "</td>";
+	} else {
+		txt += "<td> </td>";
+	}
+
+	// Race
+	txt += "<td>" + person.race + "</td>";
+
+	// Sex
+	txt += "<td>" + person.sex + "</td>";
+
+	txt += "</tr>";
+
+	return txt;
+
+}
+
+var resultCount = 25;
+var page = 1;
 $(function() {
-	$(".dropdown-toggle").dropdown()
 	var x;
-	var txt = "<table class = 'table-hover'><tr><th>First Name</th><th>Last Name</th><th>Nation</th><th>Document Date</th><th>Colony/State</th></tr>"
-	for (x in database) {
-		console.log(x)
-		txt += "<tr class = \"paginate\">"
-		person = database[x].person
-		doc = database[x].document
-		// First Name
-		if (person.names[0] && person.names[0].firstName) {
-			txt += "<td>" + person.names[0].firstName + "</td>";
-		} else {
-			txt += "<td>" + " " + "</td>"
-		}
-		// Last Name
-		if (person.names[0] && person.names[0].lastName) {
-			txt += "<td>" + person.names[0].lastName + "</td>";
-		} else {
-			txt += "<td>" + " " + "</td>"
-		}
-		// Nation
-		if (person.tribe) {
-			txt += "<td>" + person.tribe + "</td>";
-		} else {
-			txt += "<td>" + " " + "</td>"
-		}
-		// Date
-		if (doc.date) {
-			txt += "<td>" + doc.date.year + '.' + doc.date.month + '.' + doc.date.day + "</td>"
-		} else {
-			txt += "<td> </td>"
-		}
-		// Colony/State
-		if (doc.colonyState) {
-			txt += "<td>" + doc.colonyState + "</td>"
-		} else {
-			txt += "<td> </td>"
-		}
+	var txt = "";
+	database.forEach(function(element) {
+		txt += displayData(element);
+	});
+	$("#database > tbody")[0].innerHTML = txt;
 
-		txt += "</tr>"
-	}     
-	txt += "</table>"
-	$("#database")[0].innerHTML = txt;
+	
 
+    paginate();
+});
+
+function paginate() {
 	var pageParts = $(".paginate");
 	var numPages = pageParts.length;
-    var perPage = resultCount;
-    pageParts.slice(perPage).hide();
+	var perPage = resultCount;
+	pageParts.slice(perPage).hide();
 
-    $("#page-nav").pagination({
-        items: numPages,
-        itemsOnPage: perPage,
-        cssStyle: "compact-theme",
-        
+	$("#page-nav").pagination({
+	    items: numPages,
+	    itemsOnPage: perPage,
+	    cssStyle: "compact-theme",
+	    
 
-        onPageClick: function(pageNum) {
+	    onPageClick: function(pageNum) {
 
-            var start = perPage * (pageNum - 1);
-            var end = start + perPage;
-
-
-            pageParts.hide()
-                     .slice(start, end).show();
-        }
-    });
-
-    function checkFragment() {
-        // If there's no hash, treat it like page 1.
-        var hash = window.location.hash || "#page-1";
-
-        // We'll use a regular expression to check the hash string.
-        hash = hash.match(/^#page-(\d+)$/);
-
-        if(hash) {
-            // The `selectPage` function is described in the documentation.
-            // We've captured the page number in a regex group: `(\d+)`.
-            $("#page-nav").pagination("selectPage", parseInt(hash[1]));
-        }
-    };
-
-    // We'll call this function whenever back/forward is pressed...
-    $(window).bind("popstate", checkFragment);
-
-    // ... and we'll also call it when the page has loaded
-    // (which is right now).
-    checkFragment();
+	        var start = perPage * (pageNum - 1);
+	        var end = start + perPage;
 
 
+	        pageParts.hide()
+	                 .slice(start, end).show();
+	    }
+	});
+
+	checkFragment();
+}
+
+
+function checkFragment() {
+    // If there's no hash, treat it like page 1.
+    var hash = window.location.hash || "#page-1";
+
+    // We'll use a regular expression to check the hash string.
+    hash = hash.match(/^#page-(\d+)$/);
+
+    if(hash) {
+        // The `selectPage` function is described in the documentation.
+        // We've captured the page number in a regex group: `(\d+)`.
+        $("#page-nav").pagination("selectPage", parseInt(hash[1]));
+    }
+};
+
+// We'll call this function whenever back/forward is pressed...
+$(window).bind("popstate", checkFragment);
+
+function filterName(entry, name) {
+	if (entry.person.names) {
+		for (x in entry.person.names) {
+			if (entry.person.names[x].firstName) {
+				if (entry.person.names[x].firstName.toLowerCase().indexOf(name) > -1) {
+					return true;
+				}
+			}
+			if (entry.person.names[x].lastName) {
+				if (entry.person.names[x].lastName.toLowerCase().indexOf(name) > -1) {
+					return true;
+				}
+			}
+		}
+	}
+	return false;
+}
+
+function filterType(entry, type) {
+	if (entry.person.typeKindOfEnslavement && entry.person.typeKindOfEnslavement.toLowerCase() === type) {
+		return true;
+	}
+	return false;
+}
+
+function filterLocation(entry, location) {
+	if (entry.document.colonyState.toLowerCase().indexOf(location) > -1 ||
+		entry.document.stringLocation.toLowerCase().indexOf(location) > -1 ) {
+		return true;
+	}
+	return false;
+}
+
+function filterYears(entry, years) {
+	if (entry.document.date.year) {
+		if (entry.document.date.year >= years[0] && entry.document.date.year <= years[1]) {
+			return true;
+		}
+	}
+	return false;
+}
+
+$("#search").submit(function(e) {
+	var name = $("#searchName").val();
+	var type = $("#searchType").val();
+	var location = $("#searchLocation").val();
+	var years = $("#searchYears").val();
+	var results = database;
+	if (name) {
+		results = results.filter(entry => filterName(entry, name.toLowerCase()));
+	}
+	if (type) {
+		results = results.filter(entry => filterType(entry, type.toLowerCase()));
+	}
+	if (location) {
+		console.log(location)
+		results = results.filter(entry => filterLocation(entry, location.toLowerCase()));
+	}
+	if (years != "Select Years") {
+		results = results.filter(entry => filterYears(entry, years.split("-")));
+	}
+
+	console.log(results)
+	var x;
+	$("#database > tbody").empty()
+	var txt = "";
+	results.forEach(function(element) {
+		txt += displayData(element);
+	});
+	$("#database > tbody")[0].innerHTML = txt;
+	paginate();
 });

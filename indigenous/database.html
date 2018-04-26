@@ -1,54 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<html>
-	<head>
+<head>
+    <meta charset="utf-8"/>
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href = "css/main.css">
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="js/jquery.simplePagination.js"></script>
-	<script src="js/database.js"></script>
- 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<link type="text/css" rel="stylesheet" href="css/simplePagination.css"/>
 </head>
 <body>
 
 
-<div class = "container">
-	<div class = "row">
-		<div class = "col-md-2">
-			<input type="text" placeholder="Name">
+	<div class = "container">
+		<div class = "row">
+			<form id = "search" class = "form-inline" action = "#">
+				<div class = "col-md-2">
+					<input type="text" id = "searchName" placeholder="Name">
+				</div>
+				<div class = "col-md-2">
+					<input type="text" id = "searchType" placeholder="Type">
+				</div>
+				<div class = "col-md-2">
+					<input type="text" id = "searchLocation" placeholder="Location">
+				</div>
+				<div class = "col-md-2 form-group">
+						<select id = "searchYears" class = "form-control" id = "years">
+							<option selected = "selected">Select Years</option>
+						    <option>1650-1700</option>
+						    <option>1700-1750</option>
+						    <option>1750-1800</option>
+						    <option>1800-1850</option>
+						</select>
+				</div>
+				<div class = "col-md-2">
+					<input class = "btn" type = "submit" value = "Search..."></button>
+				</div>
+			</form>
 		</div>
-		<div class = "col-md-2">
-			<input type="text" placeholder="Type">
+		<div class = "row">
+			<table id = "database" class = "table-hover table-bordered">
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Document Date</th>
+						<th>Colony/State</th>
+						<th>Owner</th>
+						<th>Age</th>
+						<th>Race</th>
+						<th>Sex</th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
 		</div>
-		<div class = "col-md-2">
-			<input type="text" placeholder="Location">
-		</div>
-		<div class = "col-md-2">
-			<div class="dropdown">
-				<button class="btn btn-default dropdown-toggle" type="button" id = "menu1" data-toggle="dropdown">Select Years
-				<span class="caret"></span></button>
-				<ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-				    <li role="presentation"><a role="menuitem" href="#">1600-1650</a></li>
-				    <li role="presentation"><a role="menuitem" href="#">1650-1700</a></li>
-				    <li role="presentation"><a role="menuitem" href="#">1700-1750</a></li>
-				    <li role="presentation"><a role="menuitem" href="#">1750-1800</a></li>
-				</ul>
-			</div>
-		</div>
-		<div class = "col-md-2">
-			<button class = "search" type = "btn">Search...
+		<div class = "row">
+			<div id = "page-nav"></div>
 		</div>
 	</div>
-	<div class = "row">
-		<div id="database" class = "table-responsive table-bordered"></div>
-	</div>
-	<div class = "row">
-		<div id = "page-nav"></div>
-	</div>
-</div>tml 
+
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="js/jquery.simplePagination.js"></script>
+	<script src="js/database.js"></script>
+ 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </body>
 </html>
