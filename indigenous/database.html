@@ -10,16 +10,17 @@
 <body>
 
 
-	<div class = "container">
-		<div class = "row">
+	<div class = "container-fluid center">
+		<div class = "row center-block">
 			<form id = "search" class = "form-inline" action = "#">
 				<div class = "col-md-2">
 					<input type="text" id = "searchName" placeholder="Name">
 				</div>
 				<div class = "col-md-2">
-					<input list="types" id = "searchType" placeholder="Type">
-					<datalist id = "types">
-					</datalist>
+					<!-- <input list="types" id = "searchType" placeholder="Type"> -->
+					<select id = "types">
+					<option selected = "selected">Select Type</option>
+					</select>
 				</div>
 				<div class = "col-md-2">
 					<input type="text" id = "searchLocation" placeholder="Location">
@@ -38,7 +39,7 @@
 				</div>
 			</form>
 		</div>
-		<div class = "row">
+		<div class = "row center-block">
 			<table id = "database" class = "table-hover table-bordered">
 				<thead>
 					<tr>
@@ -57,7 +58,7 @@
 				</tbody>
 			</table>
 		</div>
-		<div class = "row">
+		<div class = "row center-block">
 			<div id = "page-nav"></div>
 		</div>
 	</div>

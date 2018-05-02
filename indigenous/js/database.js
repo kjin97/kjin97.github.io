@@ -46723,6 +46723,12 @@ function displayData(entry, paginate = true) {
 
 	txt += "</tr>";
 
+	txt += "<tr class = \"slideToggle\"><td colspan = 9 class = \"extra-info\"><p>";
+
+	txt += showExtraInfo(entry, "");
+
+	txt += "</p></td></tr>";
+
 	return txt;
 
 }
@@ -46741,13 +46747,12 @@ $(function() {
 	database.forEach(function(element) {
 		types.push(element.person.typeKindOfEnslavement);
 	});
-	console.log(types)
 	types = types.filter((type, index, thisArray) => thisArray.indexOf(type) === index)
 	var allTypes = "";
 	types.forEach(function(type) {
 		allTypes += "<option>" + type + "</option>"
 	});
-	$("#types")[0].innerHTML = allTypes
+	$("#types")[0].innerHTML += allTypes;
     paginate();
 });
 
@@ -46771,6 +46776,7 @@ function paginate() {
 
 	        pageParts.hide()
 	                 .slice(start, end).show();
+			$(".slideToggle").hide();
 	    }
 	});
 
@@ -46792,6 +46798,36 @@ function checkFragment() {
     }
 };
 
+function showExtraInfo(entry) {
+	var txt = "";
+	// txt = recurInfo(entry);
+	if (entry.additionalInformation) {
+		txt += entry.additionalInformation + "\n";
+	}
+	if (entry.researcherNotes) {
+		txt += entry.researcherNotes + "\n";
+	}
+	if (entry.document.citation) {
+		txt += entry.document.citation + "\n";
+	}
+	return txt;
+}
+
+function recurInfo(obj, prefix) {
+	out = [];
+	var x;
+	for (key in obj) {
+		if (obj[key] !== null && typeof obj[key] === 'object') {
+			out += recurInfo(obj[key], prefix + " " + key);
+		} else {
+			if (obj[key]) {
+				out += prefix + " " + key + ": " + obj[key];	
+			}
+		}
+	}
+	return out;
+}
+
 // We'll call this function whenever back/forward is pressed...
 $(window).bind("popstate", checkFragment);
 
@@ -46799,12 +46835,12 @@ function filterName(entry, name) {
 	if (entry.person.names) {
 		for (x in entry.person.names) {
 			if (entry.person.names[x].firstName) {
-				if (entry.person.names[x].firstName.toLowerCase().indexOf(name) > -1) {
+				if (entry.person.names[x].firstName.trim().toLowerCase().indexOf(name) > -1) {
 					return true;
 				}
 			}
 			if (entry.person.names[x].lastName) {
-				if (entry.person.names[x].lastName.toLowerCase().indexOf(name) > -1) {
+				if (entry.person.names[x].lastName.trim().toLowerCase().indexOf(name) > -1) {
 					return true;
 				}
 			}
@@ -46814,15 +46850,15 @@ function filterName(entry, name) {
 }
 
 function filterType(entry, type) {
-	if (entry.person.typeKindOfEnslavement && entry.person.typeKindOfEnslavement.toLowerCase() === type) {
+	if (entry.person.typeKindOfEnslavement && entry.person.typeKindOfEnslavement.trim().toLowerCase() === type) {
 		return true;
 	}
 	return false;
 }
 
 function filterLocation(entry, location) {
-	if (entry.document.colonyState.toLowerCase().indexOf(location) > -1 ||
-		entry.document.stringLocation.toLowerCase().indexOf(location) > -1 ) {
+	if (entry.document.colonyState.trim().toLowerCase().indexOf(location) > -1 ||
+		entry.document.stringLocation.trim().toLowerCase().indexOf(location) > -1 ) {
 		return true;
 	}
 	return false;
@@ -46844,20 +46880,18 @@ $("#search").submit(function(e) {
 	var years = $("#searchYears").val();
 	var results = database;
 	if (name) {
-		results = results.filter(entry => filterName(entry, name.toLowerCase()));
+		results = results.filter(entry => filterName(entry, name.trim().toLowerCase()));
 	}
 	if (type) {
-		results = results.filter(entry => filterType(entry, type.toLowerCase()));
+		results = results.filter(entry => filterType(entry, type.trim().toLowerCase()));
 	}
 	if (location) {
-		console.log(location)
-		results = results.filter(entry => filterLocation(entry, location.toLowerCase()));
+		results = results.filter(entry => filterLocation(entry, location.trim().toLowerCase()));
 	}
 	if (years != "Select Years") {
 		results = results.filter(entry => filterYears(entry, years.split("-")));
 	}
 
-	console.log(results)
 	var x;
 	$("#database > tbody").empty()
 	var txt = "";
@@ -46866,4 +46900,27 @@ $("#search").submit(function(e) {
 	});
 	$("#database > tbody")[0].innerHTML = txt;
 	paginate();
+});
+
+      // Click handler on entire table
+$("table").click(function(event) {
+
+      // No bubbling up
+    event.stopPropagation();
+
+    var $target = $(event.target);
+
+      // Open and close the appropriate thing
+    if ( $target.closest("td").attr("colspan") > 1 ) {
+    	toggle = $target.closest("tr");
+    } else {
+        toggle = $target.closest("tr").next();
+    }
+    if (toggle[0].style.display == 'none') {
+    	toggle.find("p").slideDown();
+    	toggle.show();
+    } else {
+    	toggle.find("p").slideUp()
+    	toggle.hide();
+    }
 });

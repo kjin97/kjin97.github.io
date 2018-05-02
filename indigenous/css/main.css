@@ -5,10 +5,24 @@ td {
 	padding: 0.5em;
 }
 
+table {
+	width: 100%;
+	height: 100%;
+}
+
+.row {
+	margin-right: 1em;
+}
+
 #database {
 	margin: 1em;
 }
 
-.container {
-	margin: 1em;
+.container-fluid {
+	padding: 1em;
+}
+
+.extra-info {
+	padding: 0em;
+	border: none !important;
 }
