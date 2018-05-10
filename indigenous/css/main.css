@@ -23,6 +23,9 @@ table {
 }
 
 .extra-info {
-	padding: 0em;
 	border: none !important;
+}
+
+.extra-info > p {
+	white-space: pre-wrap;
 }

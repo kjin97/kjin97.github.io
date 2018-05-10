@@ -46725,7 +46725,7 @@ function displayData(entry, paginate = true) {
 
 	txt += "<tr class = \"slideToggle\"><td colspan = 9 class = \"extra-info\"><p>";
 
-	txt += showExtraInfo(entry, "");
+	txt += showExtraInfo(entry);
 
 	txt += "</p></td></tr>";
 
@@ -46810,6 +46810,7 @@ function showExtraInfo(entry) {
 	if (entry.document.citation) {
 		txt += entry.document.citation + "\n";
 	}
+	// console.log(txt)
 	return txt;
 }
 
