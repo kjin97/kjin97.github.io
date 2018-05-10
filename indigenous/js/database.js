@@ -46752,7 +46752,7 @@ $(function() {
 	types.forEach(function(type) {
 		allTypes += "<option>" + type + "</option>"
 	});
-	$("#types")[0].innerHTML += allTypes;
+	$("#searchType")[0].innerHTML += allTypes;
     paginate();
 });
 
@@ -46882,7 +46882,7 @@ $("#search").submit(function(e) {
 	if (name) {
 		results = results.filter(entry => filterName(entry, name.trim().toLowerCase()));
 	}
-	if (type) {
+	if (type != "Select Type") {
 		results = results.filter(entry => filterType(entry, type.trim().toLowerCase()));
 	}
 	if (location) {
